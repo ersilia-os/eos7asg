@@ -7,4 +7,4 @@ RUN apt-get update && \
 RUN pip install padelpy==0.1.10
 
 WORKDIR /repo
-COPY ./repo
+COPY . /repo

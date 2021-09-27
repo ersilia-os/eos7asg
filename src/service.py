@@ -41,6 +41,7 @@ class Model(object):
 
     def calculate(self, smiles_list):
         tmp_folder = tempfile.mkdtemp()
+        tmp_fodler = "/home/mduranfrigola/Desktop/"
         data_file = os.path.join(tmp_folder, self.DATA_FILE)
         pred_file = os.path.join(tmp_folder, self.PRED_FILE)
         log_file = os.path.join(tmp_folder, self.LOG_FILE)

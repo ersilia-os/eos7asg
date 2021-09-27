@@ -75,7 +75,7 @@ class Model(object):
             h = next(reader)
             R = []
             for r in reader:
-                R += [{"descriptor": [float(x) for x in r]}]
+                R += [{"descriptor": [Float(x) for x in r]}]
         return R
 
 

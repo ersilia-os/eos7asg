@@ -1,4 +1,5 @@
 import csv
+import sys
 from padelpy import from_smiles
 
 infile = sys.argv[1]
@@ -11,4 +12,14 @@ with open(infile, "r") as f:
     for r in reader:
         smiles += [r[0]]
 
-from_smiles(smiles, output_csv=outfile)
+descs = from_smiles(smiles)
+
+keys = None
+with open(outfile, "w", newline="") as f:
+    writer = csv.writer(f)
+    for desc in descs:
+        if keys is None:
+            keys = sorted([k for k, _ in desc.items()])
+            writer.writerow(keys)
+        v = [desc[k] for k in keys]
+        writer.writerow(v)

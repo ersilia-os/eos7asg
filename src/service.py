@@ -24,7 +24,7 @@ def load_model(framework_dir, checkpoints_dir):
 def Float(x):
     try:
         return float(x)
-    else:
+    except:
         return None
 
 

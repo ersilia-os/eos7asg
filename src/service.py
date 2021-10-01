@@ -77,7 +77,7 @@ class Model(object):
                 R += [{"descriptor": [Float(x) for x in r]}]
         result = {
             'result': R,
-            'meta': h
+            'meta': {"descriptor": h}
         }
         return result
 

@@ -75,7 +75,11 @@ class Model(object):
             R = []
             for r in reader:
                 R += [{"descriptor": [Float(x) for x in r]}]
-        return R
+        result = {
+            'result': R,
+            'meta': h
+        }
+        return result
 
 
 class Artifact(BentoServiceArtifact):

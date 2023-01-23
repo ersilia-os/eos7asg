@@ -1,25 +1,40 @@
 # PADEL small molecule descriptors
 
-## Model Identifiers
-- Slug: padel
-- Ersilia ID: eos7asg
-- Tags: fingerprint,	ML,	descriptor
+PaDEL is a commonly used molecular descriptor. It calculates 1875 molecular descriptors (1444 1D and 2D descriptors, 431 3D descriptors) and 12 types of fingerprints for small molecule representation. Originally developed in Java, here we provide PaDDELPy, its python implementation.
 
-## Model Description 
-PADEL physicochemical descriptors for QSAR 
-- Input: SMILES 
-- Output: Vector (16092 bit-vector for molecular representation)
-- Model type: Regression
-- Mode of training: Pretrained 
-- Experimentally validated: No 
+## Identifiers
 
-## Source code
-This model is published by Yap Chun Wei (2011). PaDEL-Descriptor: An open source software to calculate molecular descriptors and fingerprints. *Journal of Computational Chemistry*. 32 (7): 1466-1474. DOI: https://onlinelibrary.wiley.com/doi/full/10.1002/jcc.21707
-- Code: https://github.com/ecrl/padelpy
-- Checkpoints: https://github.com/ecrl/padelpy/tree/master/padelpy/PaDEL-Descriptor
+* EOS model ID: `eos7asg`
+* Slug: `padel`
+
+## Characteristics
+
+* Input: `Compound`
+* Input Shape: `Single`
+* Task: `Representation`
+* Output: `Descriptor`
+* Output Type: `Float`
+* Output Shape: `List`
+* Interpretation: Vector representation of a molecule
+
+## References
+
+* [Publication](https://onlinelibrary.wiley.com/doi/10.1002/jcc.21707)
+* [Source Code](https://github.com/ecrl/padelpy)
+* Ersilia contributor: [miquelduranfrigola](https://github.com/miquelduranfrigola)
+
+## Citation
+
+If you use this model, please cite the [original authors](https://onlinelibrary.wiley.com/doi/10.1002/jcc.21707) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
 
 ## License
-The GPL-v3 license applies to all parts of the repository that are not externally maintained libraries. This repository uses the externally maintained library "PaDEL-Descriptor", located at `/src` and licensed under a MIT License
 
-## History
-- Model was downloaded Septenber 28, 2021
+This package is licensed under a GPL-3.0 license. The model contained within this package is licensed under a MIT license.
+
+Notice: Ersilia grants access to these models 'as is' provided by the original authors, please refer to the original code repository and/or publication if you use the model in your research.
+
+## About Us
+
+The [Ersilia Open Source Initiative](https://ersilia.io) is a Non Profit Organization ([1192266](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5170657/full-print)) with the mission is to equip labs, universities and clinics in LMIC with AI/ML tools for infectious disease research.
+
+[Help us](https://www.ersilia.io/donate) achieve our mission!

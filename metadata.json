@@ -3,21 +3,18 @@
     "Slug": "padel",
     "Status": "Ready",
     "Title": "PADEL small molecule descriptors",
-    "Description": "PaDEL is a commonly used molecular descriptor. It calculates 1875 molecular descriptors (1444 1D and 2D descriptors, 431 3D descriptors) and 12 types of fingerprints for small molecule representation. Originally developed in Java, here we provide PaDDELPy, its python implementation.\n",
+    "Description": "PaDEL is a commonly used molecular descriptor. It calculates 1875 molecular descriptors (1444 1D and 2D descriptors, 431 3D descriptors) and 12 types of fingerprints for small molecule representation. Originally developed in Java, here we provide PaDDELPy, its python implementation.",
+    "Deployment": [
+        "Local"
+    ],
     "Source": "Local",
     "Source Type": "External",
+    "Task": "Representation",
+    "Subtask": "Featurization",
     "Input": [
         "Compound"
     ],
     "Input Dimension": 1,
-    "Task": "Representation",
-    "Subtask": "Featurization",
-    "Biomedical Area": [
-        "Any"
-    ],
-    "Target Organism": [
-        "Not Applicable"
-    ],
     "Output": [
         "Descriptor"
     ],
@@ -27,19 +24,24 @@
     "Tag": [
         "Descriptor"
     ],
-    "Publication": "https://onlinelibrary.wiley.com/doi/10.1002/jcc.21707",
+    "Biomedical Area": [
+        "Any"
+    ],
+    "Target Organism": [
+        "Not Applicable"
+    ],
     "Publication Type": "Peer reviewed",
     "Publication Year": 2010,
+    "Publication": "https://onlinelibrary.wiley.com/doi/10.1002/jcc.21707",
     "Source Code": "https://github.com/ecrl/padelpy",
     "License": "MIT",
     "Contributor": "miquelduranfrigola",
     "Incorporation Date": "2021-09-27",
+    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7asg.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos7asg",
     "Docker Architecture": [
         "AMD64"
     ],
-    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7asg.zip",
-    "Deployment": [
-        "Local"
-    ]
+    "Model Size": 1.0,
+    "Environment Size": 421.0
 }

@@ -20,6 +20,7 @@ with open(outfile, "w", newline="") as f:
     for desc in descs:
         if keys is None:
             keys = sorted([k for k, _ in desc.items()])
-            writer.writerow(keys)
+            header=[k.lower().replace('-', '_') for k in keys]
+            writer.writerow(header)
         v = [desc[k] for k in keys]
         writer.writerow(v)

@@ -39,5 +39,7 @@
     "Incorporation Date": "2021-09-27",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7asg.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos7asg",
-    "Docker Architecture": "AMD64"
+    "Docker Architecture": "AMD64",
+    "Model Size": 1.0,
+    "Environment Size": 421.0
 }

@@ -50,7 +50,12 @@ _10 of 1875 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `1`
 - **Environment Size (Mb):** `421`
+- **Image Size (Mb):** `548.34`
 
+**Computational Performance (seconds):**
+- 10 inputs: `72.93`
+- 100 inputs: `-1`
+- 10000 inputs: `-1`
 
 ### References
 - **Source Code**: [https://github.com/ecrl/padelpy](https://github.com/ecrl/padelpy)

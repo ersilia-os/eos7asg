@@ -41,5 +41,11 @@
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos7asg",
     "Docker Architecture": "AMD64",
     "Model Size": 1.0,
-    "Environment Size": 421.0
+    "Environment Size": 421.0,
+    "Image Size": 548.34,
+    "Computational Performance 1": 72.93,
+    "Computational Performance 2": 56.68,
+    "Computational Performance 3": -1.0,
+    "Computational Performance 4": -1.0,
+    "Computational Performance 5": -1.0
 }

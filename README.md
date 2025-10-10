@@ -4,6 +4,7 @@ PaDEL is a commonly used molecular descriptor. It calculates 1875 molecular desc
 
 This model was incorporated on 2021-09-27.
 
+
 ## Information
 ### Identifiers
 - **Ersilia Identifier:** `eos7asg`
@@ -13,7 +14,7 @@ This model was incorporated on 2021-09-27.
 - **Task:** `Representation`
 - **Subtask:** `Featurization`
 - **Biomedical Area:** `Any`
-- **Target Organism:** `Not Applicable`
+- **Target Organism:** `Any`
 - **Tags:** `Descriptor`
 
 ### Input

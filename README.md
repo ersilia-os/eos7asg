@@ -2,7 +2,7 @@
 
 PaDEL is a commonly used molecular descriptor. It calculates 1875 molecular descriptors (1444 1D and 2D descriptors, 431 3D descriptors) and 12 types of fingerprints for small molecule representation. Originally developed in Java, here we provide PaDDELPy, its python implementation.
 
-This model was incorporated on 2021-09-27.Last packaged on 2025-10-10.
+This model was incorporated on 2021-09-27.Last packaged on 2026-03-11.
 
 ## Information
 ### Identifiers
@@ -50,10 +50,10 @@ _10 of 1875 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `1`
 - **Environment Size (Mb):** `771`
-- **Image Size (Mb):** `614.46`
+- **Image Size (Mb):** `856.06`
 
 **Computational Performance (seconds):**
-- 10 inputs: `48.35`
+- 10 inputs: `40.39`
 - 100 inputs: `-1`
 - 10000 inputs: `-1`
 

@@ -18,7 +18,7 @@ with open(infile, "r") as f:
 # which fails in read-only Singularity environments.
 _orig_dir = os.getcwd()
 os.chdir(tempfile.mkdtemp())
-descs = from_smiles(smiles)
+descs = from_smiles(smiles, timeout=60000)
 os.chdir(_orig_dir)
 
 keys = None

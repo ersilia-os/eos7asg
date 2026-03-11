@@ -1,3 +1,0 @@
-python: "3.8"
-commands:
-    - ["pip", "padelpy", "0.1.10"]

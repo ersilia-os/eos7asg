@@ -29,5 +29,5 @@ with open(outfile, "w", newline="") as f:
             keys = sorted([k for k, _ in desc.items()])
             header=[k.lower().replace('-', '_') for k in keys]
             writer.writerow(header)
-        v = [desc[k] for k in keys]
+        v = [desc[k] if desc[k] != "" else float("nan") for k in keys]
         writer.writerow(v)

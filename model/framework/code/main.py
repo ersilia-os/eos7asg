@@ -3,9 +3,19 @@ import sys
 import os
 import tempfile
 from padelpy import from_smiles
+from tqdm import tqdm
+
+root = os.path.dirname(os.path.abspath(__file__))
 
 infile = sys.argv[1]
 outfile = sys.argv[2]
+
+# Load expected descriptor columns
+columns_file = os.path.join(root, "..", "columns", "run_columns.csv")
+with open(columns_file, "r") as f:
+    reader = csv.reader(f)
+    next(reader)
+    expected_keys = [r[0] for r in reader]
 
 with open(infile, "r") as f:
     reader = csv.reader(f)
@@ -14,20 +24,37 @@ with open(infile, "r") as f:
     for r in reader:
         smiles += [r[0]]
 
+BATCH_SIZE = 10
+
 # padelpy creates temporary .smi and .csv files in os.getcwd(),
 # which fails in read-only Singularity environments.
 _orig_dir = os.getcwd()
 os.chdir(tempfile.mkdtemp())
-descs = from_smiles(smiles, timeout=60000)
+
+descs = []
+for i in tqdm(range(0, len(smiles), BATCH_SIZE)):
+    batch = smiles[i:i+BATCH_SIZE]
+    try:
+        descs += from_smiles(batch, timeout=60)
+    except Exception:
+        for smi in batch:
+            try:
+                descs += from_smiles([smi], timeout=60)
+            except Exception:
+                descs.append(None)
+
 os.chdir(_orig_dir)
 
-keys = None
 with open(outfile, "w", newline="") as f:
     writer = csv.writer(f)
+    writer.writerow(expected_keys)
+    nan_row = [float("nan")] * len(expected_keys)
     for desc in descs:
-        if keys is None:
-            keys = sorted([k for k, _ in desc.items()])
-            header=[k.lower().replace('-', '_') for k in keys]
-            writer.writerow(header)
-        v = [desc[k] if desc[k] != "" else float("nan") for k in keys]
-        writer.writerow(v)
+        if desc is None:
+            writer.writerow(nan_row)
+        else:
+            row = []
+            for k in expected_keys:
+                val = desc.get(k, "")
+                row.append(float("nan") if val == "" else val)
+            writer.writerow(row)

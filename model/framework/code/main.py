@@ -48,13 +48,11 @@ os.chdir(_orig_dir)
 with open(outfile, "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(expected_keys)
-    nan_row = [float("nan")] * len(expected_keys)
+    nan_row = [""] * len(expected_keys)
     for desc in descs:
         if desc is None:
             writer.writerow(nan_row)
         else:
-            row = []
-            for k in expected_keys:
-                val = desc.get(k, "")
-                row.append(float("nan") if val == "" else val)
+            desc_lower = {k.lower().replace('-', '_'): v for k, v in desc.items()}
+            row = [desc_lower.get(k, "") for k in expected_keys]
             writer.writerow(row)

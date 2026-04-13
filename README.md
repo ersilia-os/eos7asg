@@ -2,7 +2,7 @@
 
 PaDEL is a commonly used molecular descriptor. It calculates 1875 molecular descriptors (1444 1D and 2D descriptors, 431 3D descriptors) and 12 types of fingerprints for small molecule representation. Originally developed in Java, here we provide PaDDELPy, its python implementation.
 
-This model was incorporated on 2021-09-27.Last packaged on 2026-03-11.
+This model was incorporated on 2021-09-27.Last packaged on 2026-04-13.
 
 ## Information
 ### Identifiers
@@ -44,17 +44,17 @@ _10 of 1875 columns are shown_
 - **Source:** `Local`
 - **Source Type:** `External`
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos7asg](https://hub.docker.com/r/ersiliaos/eos7asg)
-- **Docker Architecture:** `AMD64`
+- **Docker Architecture:** `AMD64`, `ARM64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7asg.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7asg.zip)
 
 ### Resource Consumption
 - **Model Size (Mb):** `1`
 - **Environment Size (Mb):** `772`
-- **Image Size (Mb):** `856.06`
+- **Image Size (Mb):** `856.19`
 
 **Computational Performance (seconds):**
-- 10 inputs: `40.39`
-- 100 inputs: `-1`
+- 10 inputs: `39.77`
+- 100 inputs: `646.82`
 - 10000 inputs: `-1`
 
 ### References

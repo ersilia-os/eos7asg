@@ -29,21 +29,21 @@ BATCH_SIZE = 10
 # padelpy creates temporary .smi and .csv files in os.getcwd(),
 # which fails in read-only Singularity environments.
 _orig_dir = os.getcwd()
-os.chdir(tempfile.mkdtemp())
 
 descs = []
-for i in tqdm(range(0, len(smiles), BATCH_SIZE)):
-    batch = smiles[i:i+BATCH_SIZE]
-    try:
-        descs += from_smiles(batch, timeout=60)
-    except Exception:
-        for smi in batch:
-            try:
-                descs += from_smiles([smi], timeout=60)
-            except Exception:
-                descs.append(None)
-
-os.chdir(_orig_dir)
+with tempfile.TemporaryDirectory() as tmpdir:
+    os.chdir(tmpdir)
+    for i in tqdm(range(0, len(smiles), BATCH_SIZE)):
+        batch = smiles[i:i+BATCH_SIZE]
+        try:
+            descs += from_smiles(batch, timeout=60)
+        except Exception:
+            for smi in batch:
+                try:
+                    descs += from_smiles([smi], timeout=60)
+                except Exception:
+                    descs.append(None)
+    os.chdir(_orig_dir)
 
 with open(outfile, "w", newline="") as f:
     writer = csv.writer(f)
@@ -54,5 +54,8 @@ with open(outfile, "w", newline="") as f:
             writer.writerow(nan_row)
         else:
             desc_lower = {k.lower().replace('-', '_'): v for k, v in desc.items()}
-            row = [desc_lower.get(k, "") for k in expected_keys]
+            row = []
+            for k in expected_keys:
+                v = desc_lower.get(k, "")
+                row.append("" if v.lower() == "nan" else v)
             writer.writerow(row)

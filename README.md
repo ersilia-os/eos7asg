@@ -59,7 +59,7 @@ _10 of 1875 columns are shown_
 
 ### References
 - **Source Code**: [https://github.com/ecrl/padelpy](https://github.com/ecrl/padelpy)
-- **Publication**: [https://onlinelibrary.wiley.com/doi/10.1002/jcc.21707](https://onlinelibrary.wiley.com/doi/10.1002/jcc.21707)
+- **Publication**: [https://doi.org/10.1002/jcc.21707](https://doi.org/10.1002/jcc.21707)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2010`
 - **Ersilia Contributor:** [miquelduranfrigola](https://github.com/miquelduranfrigola)
